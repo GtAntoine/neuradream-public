@@ -8,6 +8,7 @@
 ## 🔗 Liens Utiles
 
 - **Application Live :** [neuradream.netlify.app](https://neuradream.netlify.app/)
+- **Version mobile :** [neuradream.netlify.app](https://neuradream-mobile.netlify.app/)
 - **Documentation Technique :** [docs/TECHNICAL.md](./docs/TECHNICAL.md)
 
 ---
