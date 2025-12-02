@@ -51,7 +51,7 @@ Contrairement aux applications d'analyse de rêves traditionnelles (comme [Dream
 ```
 
 <div align="center">
-  <img src="./public/analyse-complete.png" alt="Analyse complète d'un rêve" width="100%" />
+  <img src="./public/analyse-complete.png" alt="Analyse complète d'un rêve" width="60%" />
   <br/>
   <em>Statistiques et analyse globale des rêves</em>
 </div>
