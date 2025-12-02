@@ -1,4 +1,4 @@
-# 🌙 NeuraDream — Case Study
+# 🌙 NeuraDream - Case Study
 
 > Portfolio de l'application [NeuraDream](https://neuradream.netlify.app/),
 > une plateforme d'analyse de rêves utilisant l'IA pour offrir une compréhension profonde et continue de votre vie onirique
@@ -44,7 +44,7 @@ Contrairement aux applications d'analyse de rêves traditionnelles (comme [Dream
 [Analyse globale de plus en plus précise sur la continuité]
 ```
 
-Ce repo documente **mon travail de Product Owner** sur ce produit :
+Ce repo documente mon travail sur ce produit :
 - Vision produit et positionnement marché
 - Architecture fonctionnelle unique (multi-interprétations)
 - Stratégie de différenciation concurrentielle
@@ -176,7 +176,7 @@ La différenciation majeure de NeuraDream réside dans son approche **multi-inte
 
 ---
 
-## 🎯 Décisions Product Owner Clés
+## 🎯 Décisions Clés
 
 ### 1. Système de Multi-Interprétations
 
