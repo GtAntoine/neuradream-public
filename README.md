@@ -129,8 +129,6 @@ La différenciation majeure de NeuraDream réside dans son approche **multi-inte
 | **Analyse globale** | ❌ Statistiques basiques | ✅ Insights basés sur les interprétations validées |
 | **Score de confiance** | ❌ Non | ✅ Score de confiance (0-100) par explication |
 | **Thèmes récurrents** | ✅ Détection simple | ✅ Analyse approfondie avec exemples et thèmes liés |
-| **Visualisation** | 🟡 Images stock ou illustrations basiques | ✅ Génération IA personnalisée (DALL-E 3) |
-| **Précision sur le temps** | 🟡 Amélioration lente | ✅ Amélioration rapide grâce aux validations |
 | **Innovation clé** | Journal + interprétation simple | Multi-interprétations + système d'apprentissage |
 | **Différenciation** | IA "qui interprète" | IA "qui apprend de vous" |
 
