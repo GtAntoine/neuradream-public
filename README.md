@@ -26,7 +26,7 @@ NeuraDream est une application innovante d'analyse de rêves qui utilise l'intel
 
 ### 🎯 La différence NeuraDream
 
-Contrairement aux applications d'analyse de rêves traditionnelles (comme [DreamApp](https://dreamapp.io/) ou [Dream Journal Ultimate](https://dreamjournalultimate.com/)), NeuraDream ne se contente pas de donner **une seule interprétation** par rêve.
+Contrairement aux applications d'analyse de rêves traditionnelles (comme [DreamApp](https://dreamapp.io/) ou [Dream Journal Ultimate](https://dreamjournal.co/)), NeuraDream ne se contente pas de donner **une seule interprétation** par rêve.
 
 **L'innovation clé : Le système d'interprétations multiples et validées**
 
