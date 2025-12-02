@@ -234,7 +234,12 @@ export function DreamAnalysisView({
           </div>
         ) : dream.analysis ? (
           <div className="space-y-12">
-        
+            {/* Ambiance */}
+            <div className="relative overflow-hidden rounded-lg p-6 backdrop-blur-sm bg-gradient-to-br from-indigo-600/20 to-purple-600/20">
+              <div className="absolute inset-0 bg-white/5" />
+              <h3 className="text-xl font-semibold mb-3">{t('overallMood')}</h3>
+              <p className="relative text-lg">{dream.analysis.overallMood}</p>
+            </div>
 
             {/* Thèmes */}
             <div>
