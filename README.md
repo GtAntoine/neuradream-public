@@ -30,6 +30,12 @@ Contrairement aux applications d'analyse de rêves traditionnelles (comme [Dream
 
 **L'innovation clé : Le système d'interprétations multiples et validées**
 
+<div align="center">
+  <img src="./public/analyser-reve.png" alt="Formulaire d'analyse de rêve" width="300" />
+  <br/>
+  <em>Interface d'enregistrement d'un rêve</em>
+</div>
+
 ```
 [Un rêve enregistré]
     ↓
@@ -43,6 +49,12 @@ Contrairement aux applications d'analyse de rêves traditionnelles (comme [Dream
     ↓
 [Analyse globale de plus en plus précise sur la continuité]
 ```
+
+<div align="center">
+  <img src="./public/analyse-complete.png" alt="Analyse complète d'un rêve" width="300" />
+  <br/>
+  <em>Résultat d'analyse avec interprétations multiples et scores de confiance</em>
+</div>
 
 Ce repo documente mon travail sur ce produit :
 - Vision produit et positionnement marché
@@ -93,6 +105,12 @@ La différenciation majeure de NeuraDream réside dans son approche **multi-inte
    - Détection automatique des motifs
    - Exploration approfondie des thèmes validés
    - Liens entre thèmes connexes
+
+<div align="center">
+  <img src="./public/explication-theme.png" alt="Exploration d'un thème récurrent" width="300" />
+  <br/>
+  <em>Analyse approfondie d'un thème récurrent avec exemples et thèmes liés</em>
+</div>
 
 3. **Analyse globale** (sur l'ensemble des rêves)
    - Évolution des humeurs dans le temps
