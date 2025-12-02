@@ -31,7 +31,7 @@ Contrairement aux applications d'analyse de rêves traditionnelles (comme [Dream
 **L'innovation clé : Le système d'interprétations multiples et validées**
 
 <div align="center">
-  <img src="./public/analyser-reve.png" alt="Formulaire d'analyse de rêve" width="100%" />
+  <img src="./public/analyser-reve.png" alt="Formulaire d'analyse de rêve" width="60%" />
   <br/>
   <em>Interface d'enregistrement d'un rêve</em>
 </div>
@@ -51,7 +51,7 @@ Contrairement aux applications d'analyse de rêves traditionnelles (comme [Dream
 ```
 
 <div align="center">
-  <img src="./public/analyse-complete.png" alt="Analyse complète d'un rêve" width="60%" />
+  <img src="./public/analyse-complete.png" alt="Analyse complète d'un rêve" width="100%" />
   <br/>
   <em>Résultat d'analyse avec interprétations multiples et scores de confiance</em>
 </div>
