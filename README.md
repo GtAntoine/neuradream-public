@@ -1,6 +1,6 @@
-# 🌙 NeuraDream — Product Owner Case Study
+# 🌙 NeuraDream — Case Study
 
-> Portfolio complet de Product Ownership autour de l'application [NeuraDream](https://neuradream.netlify.app/),
+> Portfolio de l'application [NeuraDream](https://neuradream.netlify.app/),
 > une plateforme d'analyse de rêves utilisant l'IA pour offrir une compréhension profonde et continue de votre vie onirique
 
 ---
@@ -255,7 +255,7 @@ La différenciation majeure de NeuraDream réside dans son approche **multi-inte
 
 Ce portfolio démontre :
 
-### Compétences Product Owner
+### Compétences
 
 - ✅ **Innovation produit** : système de multi-interprétations unique sur le marché
 - ✅ **Analyse concurrentielle** : positionnement clair vs DreamApp/Dream Journal
@@ -275,21 +275,5 @@ Ce portfolio démontre :
 
 **Le système de multi-interprétations validées** transforme l'analyse de rêves d'un exercice passif (lecture d'une interprétation) en **un processus actif d'exploration et de co-construction de sens**.
 
-### Certifications
-
-- **[Professional Scrum Product Owner II](https://www.credly.com/badges/e66d6dd1-b6c9-4ed4-a78f-27612df6d5ae)**
-- **[Professional Scrum Master I](https://www.credly.com/badges/bc483041-bdf5-4ecc-87d0-f2bb0d16bd8d)**
-
 ---
 
-## 📞 Contact
-
-**Antoine Goethals**
-Product Owner | Développeur Full-Stack
-
-- LinkedIn: [linkedin.com/in/antoinegoethals](https://www.linkedin.com/in/antoinegoethals/)
-- Email: antoine.gt@orange.fr
-
-Passionné par l'intersection entre IA et psychologie cognitive
-
----
