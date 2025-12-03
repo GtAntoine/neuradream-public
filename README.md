@@ -3,6 +3,12 @@
 > Portfolio de l'application [NeuraDream](https://neuradream.netlify.app/),
 > une plateforme d'analyse de rêves utilisant l'IA pour offrir une compréhension profonde et continue de votre vie onirique
 
+<div align="center">
+  <img src="./public/landing.png" alt="Page d'accueil NeuraDream" width="100%" />
+  <br/>
+  <em>Page d'accueil de l'application</em>
+</div>
+
 ---
 
 ## 🔗 Liens Utiles
@@ -31,7 +37,7 @@ Contrairement aux applications d'analyse de rêves traditionnelles (comme [Dream
 **L'innovation clé : Le système d'interprétations multiples et validées**
 
 <div align="center">
-  <img src="./public/analyser-reve.png" alt="Formulaire d'analyse de rêve" width="60%" />
+  <img src="./public/analyser-reve.png" alt="Formulaire d'analyse de rêve" width="100%" />
   <br/>
   <em>Résultat d'analyse avec interprétations multiples et scores de confiance</em>
 </div>
@@ -39,7 +45,7 @@ Contrairement aux applications d'analyse de rêves traditionnelles (comme [Dream
 ```
 [Un rêve enregistré]
     ↓
-[Analyse par aspect avec 3-5 interprétations par aspect]
+[Analyse par aspect avec 2 à 3 interprétations par aspect]
     ↓
 [Chaque interprétation a un score de confiance]
     ↓
@@ -51,7 +57,7 @@ Contrairement aux applications d'analyse de rêves traditionnelles (comme [Dream
 ```
 
 <div align="center">
-  <img src="./public/analyse-complete.png" alt="Analyse complète d'un rêve" width="60%" />
+  <img src="./public/analyse-complete.png" alt="Analyse complète d'un rêve" width="100%" />
   <br/>
   <em>Statistiques et analyse globale des rêves</em>
 </div>
@@ -77,7 +83,7 @@ La différenciation majeure de NeuraDream réside dans son approche **multi-inte
     ↓
 [GPT-4 : Identification des aspects clés]
     ↓
-[Pour chaque aspect → 3-5 explications différentes]
+[Pour chaque aspect → 2 à 3 explications différentes]
     ↓
 [Chaque explication a un score de confiance (0-100)]
     ↓
@@ -142,7 +148,7 @@ La différenciation majeure de NeuraDream réside dans son approche **multi-inte
 
 | Critère | DreamApp / Dream Journal | NeuraDream |
 |---------|---------------------------|------------|
-| **Type d'interprétation** | 1 seule interprétation par rêve | 3-5 interprétations par aspect |
+| **Type d'interprétation** | 1 seule interprétation par rêve | 2 à 3 interprétations par aspect |
 | **Validation utilisateur** | ❌ Pas de feedback sur la pertinence | ✅ Système de validation par interprétation |
 | **Amélioration continue** | ❌ Chaque analyse est indépendante | ✅ Les analyses utilisent l'historique de validation |
 | **Analyse globale** | ❌ Statistiques basiques | ✅ Insights basés sur les interprétations validées |
@@ -151,7 +157,7 @@ La différenciation majeure de NeuraDream réside dans son approche **multi-inte
 | **Innovation clé** | Journal + interprétation simple | Multi-interprétations + système d'apprentissage |
 | **Différenciation** | IA "qui interprète" | IA "qui apprend de vous" |
 
-**Conclusion PO :** NeuraDream occupe une position unique sur le marché de l'analyse de rêves. Au lieu d'imposer une seule interprétation, l'application **propose plusieurs perspectives et apprend de vos choix** pour affiner progressivement sa compréhension de votre univers onirique personnel.
+**Conclusion :** NeuraDream occupe une position unique sur le marché de l'analyse de rêves. Au lieu d'imposer une seule interprétation, l'application **propose plusieurs perspectives et apprend de vos choix** pour affiner progressivement sa compréhension de votre univers onirique personnel.
 
 ---
 
@@ -200,7 +206,7 @@ La différenciation majeure de NeuraDream réside dans son approche **multi-inte
 
 **Problème identifié :** Les utilisateurs ne se reconnaissent pas toujours dans une interprétation unique. L'analyse de rêves est subjective et personnelle.
 
-**Décision PO :** Proposer 3-5 explications par aspect avec scores de confiance.
+**Décision :** Proposer 2 à 3 explications par aspect avec scores de confiance.
 
 **Impact :**
 - Taux de satisfaction utilisateur plus élevé
@@ -211,7 +217,7 @@ La différenciation majeure de NeuraDream réside dans son approche **multi-inte
 
 **Problème identifié :** Comment améliorer la précision des analyses futures ?
 
-**Décision PO :** Permettre la validation des interprétations pertinentes.
+**Décision :** Permettre la validation des interprétations pertinentes.
 
 **Impact :**
 - Création d'un historique de préférences
@@ -222,7 +228,7 @@ La différenciation majeure de NeuraDream réside dans son approche **multi-inte
 
 **Problème identifié :** Les rêves ne sont pas des événements isolés mais forment une continuité psychologique.
 
-**Décision PO :** Développer une analyse globale qui utilise l'ensemble des rêves et validations.
+**Décision :** Développer une analyse globale qui utilise l'ensemble des rêves et validations.
 
 **Impact :**
 - Insights uniques sur l'évolution personnelle
@@ -233,7 +239,7 @@ La différenciation majeure de NeuraDream réside dans son approche **multi-inte
 
 **Problème identifié :** Les mots seuls ne capturent pas toute la dimension visuelle des rêves.
 
-**Décision PO :** Intégrer DALL-E 3 pour générer des visualisations personnalisées.
+**Décision :** Intégrer DALL-E 3 pour générer des visualisations personnalisées.
 
 **Impact :**
 - Expérience utilisateur mémorable
@@ -265,7 +271,7 @@ La différenciation majeure de NeuraDream réside dans son approche **multi-inte
 
 1. **Hypothèse 1** : Les utilisateurs qui valident au moins 50% des interprétations ont un taux de rétention 2x supérieur
 2. **Hypothèse 2** : L'analyse globale génère un engagement accru après 10+ rêves enregistrés
-3. **Hypothèse 3** : Les utilisateurs préfèrent 3-5 interprétations vs 1 seule (A/B test potentiel)
+3. **Hypothèse 3** : Les utilisateurs préfèrent 2 à 3 interprétations vs 1 seule (A/B test potentiel)
 
 ---
 
@@ -292,6 +298,3 @@ Ce portfolio démontre :
 ### Innovation Clé
 
 **Le système de multi-interprétations validées** transforme l'analyse de rêves d'un exercice passif (lecture d'une interprétation) en **un processus actif d'exploration et de co-construction de sens**.
-
----
-
