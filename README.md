@@ -1,300 +1,171 @@
-# 🌙 NeuraDream - Case Study
+# 🌙 NeuraDream · Case Study
 
-> Portfolio de l'application [NeuraDream](https://neuradream.netlify.app/),
-> une plateforme d'analyse de rêves utilisant l'IA pour offrir une compréhension profonde et continue de votre vie onirique
+> Un journal de rêves où l'IA propose **plusieurs lectures** de chaque rêve, où l'on garde celles qui nous parlent, et qui **apprend de ces choix** pour les analyses suivantes.
 
 <div align="center">
-  <img src="./public/landing.png" alt="Page d'accueil NeuraDream" width="100%" />
+  <img src="./public/v2/la-cuve.gif" alt="Le rêve se développe dans un bain, sous lumière inactinique, puis la lumière s'allume sur le tirage" width="100%" />
   <br/>
-  <em>Page d'accueil de l'application</em>
+  <em>Le moment signature : le rêve se développe dans la cuve, puis la lumière s'allume sur le tirage.</em>
 </div>
 
 ---
 
-## 🔗 Liens Utiles
+## 🔗 Liens
 
-- **Application Live :** [neuradream.netlify.app](https://neuradream.netlify.app/)
-- **Version mobile :** [neuradream.netlify.app](https://neuradream-mobile.netlify.app/)
-- **Documentation Technique :** [docs/TECHNICAL.md](./docs/TECHNICAL.md)
+- **Application :** [neuradream.netlify.app](https://neuradream.netlify.app/) (journal de démonstration pré-rempli, analyse IA réelle limitée par jour)
+- **Film de présentation (32 s) :** [public/v2/neuradream-film.mp4](./public/v2/neuradream-film.mp4)
+- **Documentation technique :** [docs/TECHNICAL.md](./docs/TECHNICAL.md)
 
 ---
 
 ## 👋 Contexte
 
-NeuraDream est une application innovante d'analyse de rêves qui utilise l'intelligence artificielle (GPT-4) pour transformer la façon dont nous comprenons nos rêves. L'application permet aux utilisateurs de :
+NeuraDream est né comme un prototype : on raconte son rêve, une IA l'interprète. La première version fonctionnait, mais elle ressemblait à toutes les apps de rêves générées par IA : ciel étoilé bleu nuit, cartes translucides, boutons violets, une interprétation par rêve. Et le case study promettait une « IA qui apprend de vous » que le code ne faisait pas encore.
 
-- **Enregistrer leurs rêves** → capture quotidienne avec titre et contenu détaillé
-- **Obtenir des interprétations multiples** → plusieurs explications par aspect pour chaque rêve
-- **Valider les interprétations** → système de confiance pour affiner l'analyse
-- **Explorer les thèmes récurrents** → analyse approfondie des motifs répétitifs
-- **Visualiser leurs rêves** → génération d'images via DALL-E 3
-- **Suivre l'évolution** → analytics et insights sur la continuité des rêves
+En octobre 2026, j'ai repris le produit de zéro avec deux objectifs :
 
-### 🎯 La différence NeuraDream
+1. **Rendre vrai ce que le case study promettait** : la validation des lectures nourrit réellement les analyses suivantes.
+2. **Donner au produit une identité qu'on n'oublie pas**, au service de deux moments très différents : noter un rêve à moitié réveillé, puis le relire au calme.
 
-Contrairement aux applications d'analyse de rêves traditionnelles (comme [DreamApp](https://dreamapp.io/) ou [Dream Journal Ultimate](https://dreamjournal.co/)), NeuraDream ne se contente pas de donner **une seule interprétation** par rêve.
+---
 
-**L'innovation clé : Le système d'interprétations multiples et validées**
+## 🎯 La différence NeuraDream
 
-<div align="center">
-  <img src="./public/analyser-reve.png" alt="Formulaire d'analyse de rêve" width="100%" />
-  <br/>
-  <em>Résultat d'analyse avec interprétations multiples et scores de confiance</em>
-</div>
+Les apps comme [DreamApp](https://dreamapp.io/) ou [Dream Journal Ultimate](https://dreamjournal.co/) donnent **une interprétation par rêve**. NeuraDream découpe le rêve en aspects (« la chute », « la porte à ton prénom »…) et propose pour chacun **2 à 3 lectures sous des angles différents** (continuité avec la veille, régulation émotionnelle, symbolique jungienne…), chacune avec un indice de confiance.
+
+On entoure celles qui nous parlent, on barre les autres. Ces verdicts sont envoyés comme contexte personnel aux analyses suivantes et à l'analyse d'ensemble : l'IA privilégie les angles retenus et évite de reproposer ce qui a été écarté.
 
 ```
-[Un rêve enregistré]
+Rêve noté (texte ou dictée)
     ↓
-[Analyse par aspect avec 2 à 3 interprétations par aspect]
+Analyse : titre, ambiance, symboles, 2 à 4 aspects × 2 à 3 lectures + confiance
     ↓
-[Chaque interprétation a un score de confiance]
+Le rêveur entoure ou barre chaque lecture
     ↓
-[L'utilisateur valide les interprétations pertinentes]
+Les 24 derniers verdicts partent avec l'analyse suivante
     ↓
-[Les analyses suivantes utilisent l'historique de validation]
-    ↓
-[Analyse globale de plus en plus précise sur la continuité]
+Analyses plus personnelles, analyse d'ensemble guidée par les verdicts
 ```
 
 <div align="center">
-  <img src="./public/analyse-complete.png" alt="Analyse complète d'un rêve" width="100%" />
+  <img src="./public/v2/planche-contact.jpg" alt="Planche-contact des lectures : une lecture entourée au crayon gras, une autre barrée" width="100%" />
   <br/>
-  <em>Statistiques et analyse globale des rêves</em>
+  <em>Chaque lecture est une vue sur une planche-contact. On entoure au crayon gras, on barre ce qui ne parle pas.</em>
 </div>
-
-Ce repo documente mon travail sur ce produit :
-- Vision produit et positionnement marché
-- Architecture fonctionnelle unique (multi-interprétations)
-- Stratégie de différenciation concurrentielle
-- Processus de validation et amélioration continue
-- Innovation dans l'analyse de rêves par IA
-- KPIs et mesure d'impact utilisateur
-
----
-
-## 🚀 Innovation Technique
-
-### Pipeline IA Unique : Multi-Interpretations
-
-La différenciation majeure de NeuraDream réside dans son approche **multi-interprétations** :
-
-```
-[Rêve enregistré]
-    ↓
-[GPT-4 : Identification des aspects clés]
-    ↓
-[Pour chaque aspect → 2 à 3 explications différentes]
-    ↓
-[Chaque explication a un score de confiance (0-100)]
-    ↓
-[L'utilisateur valide les interprétations pertinentes]
-    ↓
-[DALL-E 3 : Génération d'une visualisation du rêve]
-    ↓
-[Stockage en base avec historique de validation]
-    ↓
-[Analyse thématique sur l'ensemble des rêves validés]
-    ↓
-[Insights globaux de plus en plus précis]
-```
-
-### Architecture de Données Intelligente
-
-**Trois niveaux d'analyse :**
-
-1. **Analyse individuelle** (par rêve)
-   - Multiples interprétations par aspect
-   - Système de validation utilisateur
-   - Score de confiance pour chaque explication
-
-2. **Analyse thématique** (par thème récurrent)
-   - Détection automatique des motifs
-   - Exploration approfondie des thèmes validés
-   - Liens entre thèmes connexes
 
 <div align="center">
-  <img src="./public/explication-theme.png" alt="Exploration d'un thème récurrent" width="100%" />
+  <img src="./public/v2/appris-de-toi.jpg" alt="Panneau « Ce que NeuraDream a appris de toi »" width="100%" />
   <br/>
-  <em>Analyse approfondie d'un thème récurrent avec exemples et thèmes liés</em>
+  <em>La boucle d'apprentissage est visible : chaque verdict apparaît dans « Ce que NeuraDream a appris de toi », et chaque analyse indique sur combien de verdicts elle s'appuie.</em>
 </div>
 
-3. **Analyse globale** (sur l'ensemble des rêves)
-   - Évolution des humeurs dans le temps
-   - Tendances et patterns récurrents
-   - Insights sur la continuité onirique
+---
 
-### Stack Technique
+## 🎞️ Le design : « Chambre noire »
 
-- **Frontend:** React Native + Expo + TypeScript
-- **Base de données:** IndexedDB (persistence locale)
-- **IA:** OpenAI GPT-4 (analyse) + DALL-E 3 (visualisation)
-- **Animations:** React Native Reanimated
-- **Internationalisation:** i18n custom (FR/EN)
-- **Navigation:** Expo Router (tabs)
+### Refuser le look par défaut
 
-### Ampleur du Projet
+J'ai traité l'ancienne interface comme un contre-exemple. Plutôt que d'améliorer une nuit étoilée violette, j'ai exploré plusieurs mondes visuels issus de l'univers du rêve et de la nuit (almanach de clefs des songes, pochettes de disques, labo photo…) et choisi celui qui portait le mieux le produit : **la chambre noire d'un photographe**.
 
-- **Structure modulaire** avec séparation claire des responsabilités
-  - Components (DreamForm, DreamAnalysis)
-  - Hooks personnalisés (useDreams, useThemeAnalysis, useTranslation)
-  - Services OpenAI modulaires (dream-analysis, theme-analysis, global-analysis)
-  - Database singleton pattern pour la persistence
-- **TypeScript strict** pour la sécurité de type
-- **Architecture évolutive** permettant l'ajout de nouvelles fonctionnalités
+Un rêve se développe comme un tirage. Il apparaît lentement, sous une lumière qui ne réveille pas, puis on l'examine à la lumière du jour.
+
+### Deux lumières, jamais un « mode sombre »
+
+| Lumière inactinique | Table lumineuse |
+|---|---|
+| ![Capture d'un rêve sous lumière inactinique](./public/v2/capture-inactinique.jpg) | ![Tirage fixé sur la table lumineuse](./public/v2/tirage-fixe.jpg) |
+| Pour **noter** et pour **développer**. Rouge sur noir uniquement : c'est la lumière qui ménage la vision nocturne dans un vrai labo, et c'est exactement le besoin de quelqu'un qui vient de se réveiller. | Pour **lire**. Blanc froid, encre noire, très lisible pour des textes longs. Un interrupteur mural permet de basculer à tout moment. |
+
+### Le vocabulaire du labo, au service de l'usage
+
+- **Crayon gras rouge** pour entourer ou barrer une lecture, comme un photographe sur sa planche-contact.
+- **Bandes-test de densité** pour la confiance plutôt que des barres de progression.
+- **Minuterie d'agrandisseur** en chiffres à segments pour la dictée et le développement.
+- **Marquage de bord de film** (Barlow Condensed) comme voix de l'interface, **Atkinson Hyperlegible Next** pour la lecture.
+- **Tirages argentiques noir et blanc** générés pour chaque rêve, cohérents d'un rêve à l'autre.
+
+<div align="center">
+  <img src="./public/v2/journal.jpg" alt="Journal : planches-contact par mois avec les tirages des rêves" width="100%" />
+  <br/>
+  <em>Le journal se lit comme des planches-contact, mois par mois.</em>
+</div>
+
+### Le moment signature : la cuve
+
+Pendant l'analyse, le récit du rêve se **développe** dans un bain, rendu en shader WebGL2 écrit sur mesure : liquide agité par le basculement de la cuve, caustiques de la lumière rouge, reflet de la lampe, ménisque contre le papier. L'image monte selon une courbe de densité argentique (les ombres d'abord), grain par grain. Quand l'analyse revient, le tirage reste un instant dans le fixateur, puis la lumière s'allume.
+
+Le shader se met en pause hors écran et cède la place à une version CSS sans WebGL2 ou quand l'utilisateur a demandé moins d'animations.
+
+<div align="center">
+  <img src="./public/v2/bain-developpement.jpg" alt="Développement en cours : minuterie, étapes du bain et récit qui apparaît" width="100%" />
+</div>
+
+### Noter au réveil
+
+- **Dictée vocale** (Web Speech API) : les mots en cours de dictée apparaissent pâles, comme une image latente, puis se fixent.
+- **Brouillon gardé automatiquement** : un rêve à moitié noté n'est jamais perdu.
+- **Notes de prise de vue** repliées après le texte : lucide, cauchemar, récurrent, émotion au réveil, qualité du sommeil.
 
 ---
 
-## 🆚 Positionnement Marché vs Concurrents
+## 🧭 Tendances et symboles
 
-| Critère | DreamApp / Dream Journal | NeuraDream |
-|---------|---------------------------|------------|
-| **Type d'interprétation** | 1 seule interprétation par rêve | 2 à 3 interprétations par aspect |
-| **Validation utilisateur** | ❌ Pas de feedback sur la pertinence | ✅ Système de validation par interprétation |
-| **Amélioration continue** | ❌ Chaque analyse est indépendante | ✅ Les analyses utilisent l'historique de validation |
-| **Analyse globale** | ❌ Statistiques basiques | ✅ Insights basés sur les interprétations validées |
-| **Score de confiance** | ❌ Non | ✅ Score de confiance (0-100) par explication |
-| **Thèmes récurrents** | ✅ Détection simple | ✅ Analyse approfondie avec exemples et thèmes liés |
-| **Innovation clé** | Journal + interprétation simple | Multi-interprétations + système d'apprentissage |
-| **Différenciation** | IA "qui interprète" | IA "qui apprend de vous" |
+<div align="center">
+  <img src="./public/v2/tendances.jpg" alt="Tendances : activité, densité par mois, symboles qui reviennent, ambiances" width="100%" />
+</div>
 
-**Conclusion :** NeuraDream occupe une position unique sur le marché de l'analyse de rêves. Au lieu d'imposer une seule interprétation, l'application **propose plusieurs perspectives et apprend de vos choix** pour affiner progressivement sa compréhension de votre univers onirique personnel.
+- **Dictionnaire de symboles personnel** : chaque symbole relevé dans ses propres rêves, sa première apparition, les rêves où il revient, et une analyse à la demande reliée à ces rêves.
+- **Tendances** : activité, densité des rêves par mois, symboles récurrents, ambiances, émotions au réveil.
+- **Analyse d'ensemble** (à partir de 3 rêves analysés) : motifs, évolution émotionnelle et pistes de réflexion, guidées par les verdicts.
 
 ---
 
-## 📊 Architecture Produit
+## 🛠️ Architecture
 
-### Modèle de Données Centré Utilisateur
+| Couche | Choix |
+|---|---|
+| Interface | React 19, TypeScript strict, Tailwind CSS 4, React Router 7, Vite |
+| Données | Locales, dans le navigateur (IndexedDB via Dexie) : les rêves ne sont jamais stockés sur un serveur |
+| IA | Supabase Edge Functions vers OpenAI : sorties JSON structurées, images noir et blanc générées |
+| Sécurité | Clé OpenAI uniquement côté serveur, CORS restreint, quotas par IP et quotidiens pour la démo publique |
+| Signature | Shader WebGL2 sur mesure, sans dépendance |
+| Hébergement | Netlify |
 
-**Dream Object** (rêve individuel)
-```typescript
-{
-  id: string;
-  date: number;  // timestamp
-  title: string;
-  content: string;
-  analysis: {
-    interpretations: Array<{
-      aspect: string;  // Ex: "Symbole de l'eau"
-      explanations: Array<{
-        explanation: string;
-        confidence: number;  // 0-100
-        isValidated: boolean;  // ⭐ Validé par l'utilisateur
-      }>;
-    }>;
-    overallMood: string;
-    keywords: string[];
-  };
-  thumbnail: string;  // Image DALL-E
-}
-```
-
-**Avantage Produit :** Cette structure permet à l'utilisateur d'être **acteur de son analyse**, pas simplement consommateur. Chaque validation enrichit le modèle de compréhension.
-
-### Flux Utilisateur Optimisé
-
-1. **Capture rapide** → Formulaire simple avec titre + contenu
-2. **Analyse enrichie** → Multiple interprétations + visualisation
-3. **Interaction** → Validation des interprétations pertinentes
-4. **Exploration** → Navigation par thèmes récurrents
-5. **Insights** → Dashboard d'analytics sur l'évolution
+Les lectures sont cadrées par un prompt éthique : des hypothèses prudentes, jamais de divination ni de diagnostic, et une invitation douce à en parler à quelqu'un si un rêve évoque une détresse importante.
 
 ---
 
-## 🎯 Décisions Clés
+## 🎯 Décisions clés
 
-### 1. Système de Multi-Interprétations
-
-**Problème identifié :** Les utilisateurs ne se reconnaissent pas toujours dans une interprétation unique. L'analyse de rêves est subjective et personnelle.
-
-**Décision :** Proposer 2 à 3 explications par aspect avec scores de confiance.
-
-**Impact :**
-- Taux de satisfaction utilisateur plus élevé
-- Sentiment de liberté et de contrôle
-- Amélioration continue de la pertinence
-
-### 2. Système de Validation Utilisateur
-
-**Problème identifié :** Comment améliorer la précision des analyses futures ?
-
-**Décision :** Permettre la validation des interprétations pertinentes.
-
-**Impact :**
-- Création d'un historique de préférences
-- Analyses futures plus personnalisées
-- Engagement utilisateur renforcé (interaction active)
-
-### 3. Analyse Globale sur la Continuité
-
-**Problème identifié :** Les rêves ne sont pas des événements isolés mais forment une continuité psychologique.
-
-**Décision :** Développer une analyse globale qui utilise l'ensemble des rêves et validations.
-
-**Impact :**
-- Insights uniques sur l'évolution personnelle
-- Détection de patterns à long terme
-- Valeur ajoutée différenciante
-
-### 4. Génération d'Images DALL-E
-
-**Problème identifié :** Les mots seuls ne capturent pas toute la dimension visuelle des rêves.
-
-**Décision :** Intégrer DALL-E 3 pour générer des visualisations personnalisées.
-
-**Impact :**
-- Expérience utilisateur mémorable
-- Partage social potentiel
-- Différenciation visuelle forte
+1. **Plusieurs lectures plutôt qu'une.** L'interprétation d'un rêve est subjective : proposer des angles différents laisse le rêveur décider de ce qui fait sens pour lui.
+2. **Le verdict comme geste central.** Entourer ou barrer est rapide, expressif, et alimente directement les analyses suivantes.
+3. **Une boucle d'apprentissage visible.** Montrer ce que l'IA a retenu rend la personnalisation crédible et contrôlable.
+4. **Deux lumières pour deux moments.** Le réveil et la relecture n'ont pas les mêmes besoins visuels.
+5. **La vie privée par défaut.** Le journal reste sur l'appareil ; seul le texte à analyser transite, sans être conservé.
 
 ---
 
-## 📈 KPIs et Mesure d'Impact
+## 📈 Ce que je mesurerais
 
-### Métriques Produit
+Ce sont des hypothèses à valider, pas des résultats : l'application n'a pas encore d'utilisateurs suivis.
 
-**Engagement**
-- Taux de rêves enregistrés par utilisateur/semaine
-- Nombre moyen de validations par analyse
-- Taux de retour (utilisateurs actifs sur 30 jours)
+- **Engagement** : rêves notés par semaine, part des rêves notés par dictée, matins consécutifs.
+- **Qualité perçue** : part des lectures entourées vs barrées, et son évolution au fil des analyses (si la boucle fonctionne, la part entourée devrait monter).
+- **Valeur long terme** : consultation des symboles récurrents et de l'analyse d'ensemble après 10 rêves.
 
-**Qualité de l'Analyse**
-- Score de confiance moyen des interprétations validées
-- Nombre d'interprétations validées vs non validées (taux d'acceptation)
-- Évolution du score de confiance dans le temps
-
-**Valeur Utilisateur**
-- Temps passé sur l'analyse de thèmes récurrents
-- Nombre de thèmes explorés par utilisateur
-- Taux de consultation des insights globaux
-
-### Hypothèses à Valider
-
-1. **Hypothèse 1** : Les utilisateurs qui valident au moins 50% des interprétations ont un taux de rétention 2x supérieur
-2. **Hypothèse 2** : L'analyse globale génère un engagement accru après 10+ rêves enregistrés
-3. **Hypothèse 3** : Les utilisateurs préfèrent 2 à 3 interprétations vs 1 seule (A/B test potentiel)
+Hypothèses : les rêveurs qui donnent des verdicts reviennent plus souvent ; la part de lectures retenues augmente avec le nombre de verdicts ; la dictée augmente le nombre de rêves notés au réveil.
 
 ---
 
-## 🎯 Positionnement pour un Recruteur
+## 💼 Ce que ce projet montre
 
-Ce portfolio démontre :
+- **Produit** : une différenciation claire (plusieurs lectures + apprentissage) rendue tangible dans l'interface, pas seulement dans un argumentaire.
+- **Design** : une direction visuelle assumée, pensée depuis l'usage réel (le réveil, la relecture) plutôt que depuis la catégorie.
+- **Technique** : IA côté serveur sécurisée, données locales, shader WebGL sur mesure, accessibilité (contrastes vérifiés, clavier, réduction des animations).
+- **Exécution** : prototype cassé repris de zéro jusqu'à une application en ligne, avec son film de présentation réalisé en code à partir du vrai produit.
 
-### Compétences
-
-- ✅ **Innovation produit** : système de multi-interprétations unique sur le marché
-- ✅ **Analyse concurrentielle** : positionnement clair vs DreamApp/Dream Journal
-- ✅ **Architecture fonctionnelle** : trois niveaux d'analyse (individuel, thématique, global)
-- ✅ **Décisions argumentées** : choix du système de validation, scores de confiance
-- ✅ **Vision long-terme** : système d'apprentissage continu
-- ✅ **KPIs pertinents** : métriques d'engagement, qualité, et valeur utilisateur
-
-### Compétences Transverses
-
-- ✅ **User-centric** : système de validation centré sur l'utilisateur
-- ✅ **Data-driven** : architecture pensée pour l'amélioration continue
-- ✅ **Différenciation** : positionnement unique "IA qui apprend de vous"
-- ✅ **Technique & Produit** : compréhension de l'architecture IA
-
-### Innovation Clé
-
-**Le système de multi-interprétations validées** transforme l'analyse de rêves d'un exercice passif (lecture d'une interprétation) en **un processus actif d'exploration et de co-construction de sens**.
+<div align="center">
+  <a href="./public/v2/neuradream-film.mp4"><img src="./public/v2/film-poster.jpg" alt="Voir le film de présentation (32 s)" width="100%" /></a>
+  <br/>
+  <em>Film de présentation (32 s), réalisé en code à partir du vrai produit.</em>
+</div>
