@@ -17,7 +17,7 @@ NeuraDream is a web dream journal. A dream is captured (typed or dictated), then
 ## Data flow
 
 1. **Capture** (`/`). A draft is autosaved to localStorage. Dictation uses the Web Speech API (`useDictation`). Optional tags: lucid, nightmare, recurring, emotion on waking, sleep quality.
-2. **Develop.** The dream is saved to IndexedDB, then `runAnalysis` calls `analyze-dream` with the last 24 non-neutral verdicts (`learningContext`). The response (title, mood, symbols, aspects × readings) is stored with `verdict: 'neutral'`. `generate-dream-image` then runs in the background, and the image is stored as a Blob.
+2. **Develop.** The dream is saved to IndexedDB, then `runAnalysis` calls `analyze-dream` with summaries of the 12 most recent analysed dreams (`journalContext`: title, mood, symbols, tags, excerpt) and the last 24 non-neutral verdicts (`learningContext`), so the dream is read as part of a series. The response also lists the earlier dreams it echoes (`links`), shown as « Dans la continuité de tes rêves ». The response (title, mood, symbols, aspects × readings) is stored with `verdict: 'neutral'`. `generate-dream-image` then runs in the background, and the image is stored as a Blob.
 3. **Verdict.** `setVerdict` performs an atomic read-modify-write, and the "Ce que NeuraDream a appris de toi" panel recomputes from the journal.
 4. **Symbols.** This is a personal dictionary built from keywords (`buildSymbolIndex`). `analyze-theme` explains a symbol and relates it to excerpts from the user's own dreams, and the result is cached in `themes`.
 5. **Insights.** Statistics are computed on the client (`computeInsights`). The overall analysis (`analyze-global`, at least 3 analysed dreams) is driven by the verdicts.
@@ -26,7 +26,7 @@ NeuraDream is a web dream journal. A dream is captured (typed or dictated), then
 
 - The OpenAI key exists only as a Supabase secret.
 - Rate limiting goes through `ai_usage` and `consume_ai_quota`, with two quotas: per salted IP hash and per day, plus a global daily cap per function. RLS is enabled with no policies, so only the service role can access the table.
-- No dream content is ever stored server-side.
+- No dream content is ever stored server-side (the dream being analysed and short summaries of recent dreams are sent, then discarded).
 - CORS is restricted to `ALLOWED_ORIGINS` and localhost.
 
 ## Deploying the backend

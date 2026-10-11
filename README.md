@@ -1,6 +1,6 @@
 # 🌙 NeuraDream · Case Study
 
-> Un journal de rêves où l'IA propose **plusieurs lectures** de chaque rêve, où l'on garde celles qui nous parlent, et qui **apprend de ces choix** pour les analyses suivantes.
+> Un journal de rêves qui ne lit pas les rêves un par un mais **comme une série** : il repère les **motifs qui reviennent** d'une nuit à l'autre, relie chaque nouveau rêve aux précédents, et **apprend des lectures que tu retiens** pour donner des réponses de plus en plus personnelles.
 
 <div align="center">
   <img src="./public/v2/la-cuve.gif" alt="Le rêve se développe dans un bain, sous lumière inactinique, puis la lumière s'allume sur le tirage" width="100%" />
@@ -24,27 +24,51 @@ NeuraDream est né comme un prototype : on raconte son rêve, une IA l'interprè
 
 En octobre 2026, j'ai repris le produit de zéro avec deux objectifs :
 
-1. **Rendre vrai ce que le case study promettait** : la validation des lectures nourrit réellement les analyses suivantes.
+1. **Rendre vrai ce que le case study promettait** : chaque rêve est lu à la lumière des précédents, et les lectures validées nourrissent réellement les analyses suivantes.
 2. **Donner au produit une identité qu'on n'oublie pas**, au service de deux moments très différents : noter un rêve à moitié réveillé, puis le relire au calme.
 
 ---
 
-## 🎯 La différence NeuraDream
+## 🎯 La différence NeuraDream : lire les rêves ensemble
 
-Les apps comme [DreamApp](https://dreamapp.io/) ou [Dream Journal Ultimate](https://dreamjournal.co/) donnent **une interprétation par rêve**. NeuraDream découpe le rêve en aspects (« la chute », « la porte à ton prénom »…) et propose pour chacun **2 à 3 lectures sous des angles différents** (continuité avec la veille, régulation émotionnelle, symbolique jungienne…), chacune avec un indice de confiance.
+Les apps comme [DreamApp](https://dreamapp.io/) ou [Dream Journal Ultimate](https://dreamjournal.co/) interprètent **chaque rêve isolément**, comme si la nuit précédente n'existait pas. Or un rêve prend souvent son sens dans une série : une maison qui revient en s'agrandissant, une eau d'abord menaçante puis calme, une peur d'être jugé qui s'atténue d'un mois à l'autre.
 
-On entoure celles qui nous parlent, on barre les autres. Ces verdicts sont envoyés comme contexte personnel aux analyses suivantes et à l'analyse d'ensemble : l'IA privilégie les angles retenus et évite de reproposer ce qui a été écarté.
+NeuraDream lit le journal **comme un tout**, à trois niveaux :
+
+| Niveau | Ce que fait NeuraDream | Ce que ça change |
+|---|---|---|
+| **Chaque nouveau rêve** | L'analyse reçoit tes rêves récents (titres, symboles, ambiances) et tes verdicts. Elle relie le rêve à ceux qu'il prolonge et explique pourquoi. | « Dans la continuité de tes rêves » : le chat qui nageait avec toi revient et devient un guide. |
+| **La lecture d'ensemble** | Une analyse transversale des rêves récents : motifs récurrents, évolution émotionnelle, pistes de réflexion. | Des patterns qu'aucune interprétation isolée ne verrait, avec les rêves concernés. |
+| **La boucle d'apprentissage** | Les lectures que tu entoures ou barres partent avec les analyses suivantes. | Des réponses de plus en plus personnelles, dans les angles qui te parlent. |
+
+<div align="center">
+  <img src="./public/v2/lecture-ensemble.jpg" alt="Lecture d'ensemble : motifs récurrents, rêves concernés, évolution émotionnelle et pistes" width="100%" />
+  <br/>
+  <em>La lecture d'ensemble : les motifs qui reviennent (la maison qui s'agrandit, l'eau devenue calme, un guide qui revient…), les rêves qui les portent et l'évolution émotionnelle.</em>
+</div>
+
+<div align="center">
+  <img src="./public/v2/continuite.jpg" alt="Dans la continuité de tes rêves : trois rêves précédents reliés au nouveau, avec la raison" width="100%" />
+  <br/>
+  <em>Chaque rêve est lu avec les précédents : NeuraDream montre ceux qu'il prolonge et ce qui a changé.</em>
+</div>
+
+### Plusieurs lectures, et c'est toi qui tranches
+
+À l'échelle d'un rêve, NeuraDream découpe le récit en aspects (« la chute », « la porte à ton prénom »…) et propose pour chacun **2 à 3 lectures sous des angles différents** (continuité avec la veille, régulation émotionnelle, symbolique jungienne…), chacune avec un indice de confiance. On entoure celles qui parlent, on barre les autres : ces verdicts deviennent le contexte personnel des analyses suivantes et de la lecture d'ensemble.
 
 ```
 Rêve noté (texte ou dictée)
     ↓
-Analyse : titre, ambiance, symboles, 2 à 4 aspects × 2 à 3 lectures + confiance
+Analyse du rêve + tes 12 derniers rêves + tes 24 derniers verdicts
     ↓
-Le rêveur entoure ou barre chaque lecture
+Titre, ambiance, symboles, aspects × lectures, rêves qu'il prolonge
     ↓
-Les 24 derniers verdicts partent avec l'analyse suivante
+Tu entoures ou barres chaque lecture
     ↓
-Analyses plus personnelles, analyse d'ensemble guidée par les verdicts
+Lecture d'ensemble : motifs récurrents et évolution, guidés par tes verdicts
+    ↓
+Chaque nouveau rêve est lu avec tout ce qui précède
 ```
 
 <div align="center">
@@ -116,7 +140,7 @@ Le shader se met en pause hors écran et cède la place à une version CSS sans 
 
 - **Dictionnaire de symboles personnel** : chaque symbole relevé dans ses propres rêves, sa première apparition, les rêves où il revient, et une analyse à la demande reliée à ces rêves.
 - **Tendances** : activité, densité des rêves par mois, symboles récurrents, ambiances, émotions au réveil.
-- **Analyse d'ensemble** (à partir de 3 rêves analysés) : motifs, évolution émotionnelle et pistes de réflexion, guidées par les verdicts.
+- **Lecture d'ensemble** en tête des tendances (dès 3 rêves analysés) : motifs, évolution émotionnelle et pistes de réflexion, guidées par les verdicts.
 
 ---
 
@@ -137,11 +161,12 @@ Les lectures sont cadrées par un prompt éthique : des hypothèses prudentes, j
 
 ## 🎯 Décisions clés
 
-1. **Plusieurs lectures plutôt qu'une.** L'interprétation d'un rêve est subjective : proposer des angles différents laisse le rêveur décider de ce qui fait sens pour lui.
-2. **Le verdict comme geste central.** Entourer ou barrer est rapide, expressif, et alimente directement les analyses suivantes.
-3. **Une boucle d'apprentissage visible.** Montrer ce que l'IA a retenu rend la personnalisation crédible et contrôlable.
-4. **Deux lumières pour deux moments.** Le réveil et la relecture n'ont pas les mêmes besoins visuels.
-5. **La vie privée par défaut.** Le journal reste sur l'appareil ; seul le texte à analyser transite, sans être conservé.
+1. **Lire les rêves en série, pas isolément.** Un rêve isolé dit peu ; ses échos avec les précédents disent beaucoup. Chaque analyse reçoit l'historique du journal, et la lecture d'ensemble cherche les motifs.
+2. **Plusieurs lectures plutôt qu'une.** L'interprétation d'un rêve est subjective : proposer des angles différents laisse le rêveur décider de ce qui fait sens pour lui.
+3. **Le verdict comme geste central.** Entourer ou barrer est rapide, expressif, et alimente directement les analyses suivantes.
+4. **Une boucle d'apprentissage visible.** Montrer ce que l'IA a retenu rend la personnalisation crédible et contrôlable.
+5. **Deux lumières pour deux moments.** Le réveil et la relecture n'ont pas les mêmes besoins visuels.
+6. **La vie privée par défaut.** Le journal reste sur l'appareil ; seuls le rêve à analyser et un résumé des rêves récents transitent, sans être conservés.
 
 ---
 
@@ -151,7 +176,7 @@ Ce sont des hypothèses à valider, pas des résultats : l'application n'a pas e
 
 - **Engagement** : rêves notés par semaine, part des rêves notés par dictée, matins consécutifs.
 - **Qualité perçue** : part des lectures entourées vs barrées, et son évolution au fil des analyses (si la boucle fonctionne, la part entourée devrait monter).
-- **Valeur long terme** : consultation des symboles récurrents et de l'analyse d'ensemble après 10 rêves.
+- **Valeur long terme** : consultation de la lecture d'ensemble et des rêves reliés ; part des liens entre rêves jugés pertinents.
 
 Hypothèses : les rêveurs qui donnent des verdicts reviennent plus souvent ; la part de lectures retenues augmente avec le nombre de verdicts ; la dictée augmente le nombre de rêves notés au réveil.
 
@@ -159,7 +184,7 @@ Hypothèses : les rêveurs qui donnent des verdicts reviennent plus souvent ; la
 
 ## 💼 Ce que ce projet montre
 
-- **Produit** : une différenciation claire (plusieurs lectures + apprentissage) rendue tangible dans l'interface, pas seulement dans un argumentaire.
+- **Produit** : une différenciation claire (des rêves lus en série, plusieurs lectures, un apprentissage) rendue tangible dans l'interface, pas seulement dans un argumentaire.
 - **Design** : une direction visuelle assumée, pensée depuis l'usage réel (le réveil, la relecture) plutôt que depuis la catégorie.
 - **Technique** : IA côté serveur sécurisée, données locales, shader WebGL sur mesure, accessibilité (contrastes vérifiés, clavier, réduction des animations).
 - **Exécution** : prototype cassé repris de zéro jusqu'à une application en ligne, avec son film de présentation réalisé en code à partir du vrai produit.
